@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Records using Map & Filter Task 16</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="top-header">
+    <h1>Hi, Username</h1>
+    <button class="login-btn" type="button">Login</button>
+  </header>
+
+  <main class="main-content">
+    <!-- Sticky / Fixed Search Panel -->
+    <div class="search-panel-wrapper">
+      <div class="search-panel">
+        <div class="search-input-wrapper">
+          <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Search Student" 
+            autocomplete="off" 
+          />
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+        <button class="search-btn" id="searchBtn" type="button">Search</button>
+      </div>
+    </div>
+
+    <!-- Results & Cards -->
+    <div class="sub-content">
+      <h2 class="search-results-heading" id="searchHeading">Search Results for ...</h2>
+      <div class="cards-grid" id="cardsContainer"></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

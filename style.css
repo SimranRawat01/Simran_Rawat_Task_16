@@ -1,0 +1,240 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #7026e6;
+  --accent-color: #5c1bc2;
+  --text-color: #333333;
+  --secondary-text-color: #4b5563;
+  --border-color: #eceff1;
+  --card-bg-color: #f1f4f9;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 24px 32px;
+  min-height: 100vh;
+}
+
+/* Top Header */
+.top-header {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1.5px solid var(--border-color);
+}
+
+.top-header h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.login-btn {
+  background-color: #e8f0fe;
+  color: #3b71ca;
+  border: none;
+  padding: 10px 32px;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.login-btn:hover {
+  background-color: #d2e3fc;
+}
+
+/* Main Container */
+.main-content {
+  max-width: 1300px;
+  margin: 0 auto 40px auto;
+}
+
+/* Fixed / Sticky Search Panel Wrapper */
+.search-panel-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--primary-color);
+  padding-top: 24px;
+  padding-bottom: 20px;
+}
+
+.search-panel {
+  border: 1.5px solid var(--border-color);
+  border-radius: 18px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.search-input-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  height: 48px;
+  padding: 0 42px 0 16px;
+  background-color: var(--card-bg-color);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 14.5px;
+  color: var(--text-color);
+  outline: none;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.search-input-wrapper input::placeholder {
+  color: #94a3b8;
+}
+
+.search-input-wrapper input:focus {
+  background-color: var(--primary-color);
+  border-color: var(--secondary-color);
+}
+
+.search-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  color: #64748b;
+}
+
+.search-btn {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  height: 48px;
+  padding: 0 32px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.search-btn:hover {
+  background-color: var(--accent-color);
+}
+
+/* Sub-Content & Grid */
+.sub-content {
+  padding-top: 8px;
+}
+
+.search-results-heading {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 24px;
+  display: none;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* Student Card */
+.student-card {
+  background-color: var(--card-bg-color);
+  border-radius: 16px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  word-break: break-word;
+}
+
+.student-field {
+  font-size: 0.9rem;
+  color: var(--secondary-text-color);
+  line-height: 1.45;
+}
+
+.field-name {
+  font-size: 0.95rem;
+}
+
+.field-value {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Not Found Message */
+.no-results {
+  grid-column: 1 / -1;
+  padding: 48px 16px;
+  text-align: center;
+  color: var(--secondary-text-color);
+  font-size: 16px;
+}
+
+/* Tablet Screens (<= 992px) */
+@media (max-width: 992px) {
+  body {
+    padding: 20px 24px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+/* Mobile Screens (<= 640px) */
+@media (max-width: 640px) {
+  body {
+    padding: 16px;
+  }
+
+  .top-header {
+    padding-bottom: 16px;
+  }
+
+  .search-panel {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+    border-radius: 14px;
+    gap: 12px;
+  }
+
+  .search-input-wrapper {
+    max-width: 100%;
+  }
+
+  .search-btn {
+    width: 100%;
+    height: 44px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
